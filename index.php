@@ -6,9 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <p>teste</p>
-    <?php
-    phpinfo(); 
-    ?>
+    <form action="processar_formulario.php" method="post">
+        <label for="Nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <input type="submit" value="Enviar">
+    </form>
 </body>
 </html>
