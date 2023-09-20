@@ -53,9 +53,10 @@ if ($resultado->num_rows > 0) {
         }
         if($tipo_de_comida=="pao_com_alho"){
             $totalpao=$totalpao+$quantidade;    
-        }   
+        }
+        echo "O convidado $nomeConvidado pediu $quantidade de $tipo_de_comida <br>";   
     }
-        echo "O convidado $nomeConvidado pediu $quantidade de $tipo_de_comida <br>";
+        
        
     $valortol=$totalpao*3+$totalcarne*10;
     echo "Vai custar no total o churrasco $valortol de reais"; 
