@@ -16,21 +16,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $opcao = $_POST['opcao'];
     $quantidade = $_POST['quantidade'];
 
-    // Inserir nome do convidado na tabela "convidados"
+   
     $sql1 = "INSERT INTO convidados (nome) VALUES ('$nome')";
 
     if ($conn->query($sql1) === TRUE) {
-        echo "Nome inserido com sucesso!";
+        echo "Nome inserido com sucesso!<br>";
     } else {
         echo "Erro ao inserir o nome: " . $conn->error;
     }
 
-    // Inserir escolha de comida e quantidade na tabela "comida"
+    
     $sql2 = "INSERT INTO comida (quantidade, tipo_de_comida, convidado_id) VALUES ($quantidade, '$opcao', LAST_INSERT_ID())";
 
     if ($conn->query($sql2) === TRUE) {
-        echo "Escolha de comida inserida com sucesso!";
+        
+        echo "Escolha de comida inserida com sucesso!<br>";
     } else {
+        
         echo "Erro ao inserir a escolha de comida: " . $conn->error;
     }
 }
