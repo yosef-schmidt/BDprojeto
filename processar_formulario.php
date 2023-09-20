@@ -48,14 +48,15 @@ if ($resultado->num_rows > 0) {
         $quantidade = $linha["quantidade"];
         $tipo_de_comida = $linha["tipo_de_comida"];
         $nomeConvidado = $linha["nome"];
-        echo "O convidado $nomeConvidado pediu $quantidade de $tipo_de_comida <br>";
         if($tipo_de_comida=="carne"){
-            $totalcarne=$totalcarne+1;
+            $totalcarne=$totalcarne+$quantidade;
         }
         if($tipo_de_comida=="pao_com_alho"){
-            $totalpao=$totalpao+1;    
+            $totalpao=$totalpao+$quantidade;    
         }   
     }
+        echo "O convidado $nomeConvidado pediu $quantidade de $tipo_de_comida <br>";
+       
     $valortol=$totalpao*3+$totalcarne*10;
     echo "Vai custar no total o churrasco $valortol de reais"; 
 } else {
