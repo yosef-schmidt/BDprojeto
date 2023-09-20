@@ -35,6 +35,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         echo "Erro ao inserir a escolha de comida: " . $conn->error;
     }
+
+}
+$sql = "SELECT quantidade, tipo_de_comida FROM comida";
+
+$resultado = $conn->query($sql);
+
+if ($resultado->num_rows > 0) {
+    // Loop através dos resultados
+    while ($linha = $resultado->fetch_assoc()) {
+        $quantidade = $linha["quantidade"];
+        $tipo_de_comida = $linha["tipo_de_comida"];
+        
+        // Faça algo com a quantidade e o tipo de comida, por exemplo, exiba na tela
+        echo "Quantidade: " . $quantidade . ", Tipo de Comida: " . $tipo_de_comida . "<br>";
+    }
+} else {
+    echo "Nenhum registro encontrado na tabela 'comida'.";
 }
 
 $conn->close();

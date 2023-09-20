@@ -26,6 +26,11 @@
         
         <input type="submit" value="Enviar">
     </form>
+    <br>
+    <br>
+    <a href="http://localhost/processar_formulario.php" target="_blank">
+        <button>Consltar convidados e comidas</button>
+    </a>
 </body>
 </html>
 
